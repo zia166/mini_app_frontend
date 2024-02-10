@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <h4 class="modal-title">User Details</h4>
+  <button type="button " class="close btn" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body" *ngFor="let event of eventArray">
+  <div>
+    <strong>Username:</strong> {{ event.username }}
+  </div>
+  <div>
+    <strong>Booking Date:</strong> {{ event.booking_date | date:'yyyy-MM-dd' }}
+  </div>
+  <div>
+    <strong>Email:</strong> {{ event.email }}
+  </div>
+  <div>
+    <strong>Start Time:</strong> {{ event.start_time }}
+  </div>
+  <div>
+    <strong>End Time:</strong> {{ event.end_time }}
+  </div>
+  <div>
+    <strong>Status:</strong> {{ event.status }}
+  </div>
+  <div>
+    <strong>Title:</strong> {{ event.title }}
+  </div>
+  <div style="display: none;">
+    {{ event._id }} 
+  </div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-danger" (click)="deleteEvent(event)">Delete</button>
+    &nbsp;&nbsp;
+    <button type="button" class="btn btn-success" (click)="completeEvent(event._id)">Mark as Complete</button>
+</div>
+  
+</div>

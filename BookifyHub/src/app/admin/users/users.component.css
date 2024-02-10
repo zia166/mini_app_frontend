@@ -1,0 +1,139 @@
+
+/*DASH BOARD CONTENT*/
+  .all-border {
+    border: 1px solid transparent;
+    width: auto;
+    height: 800px;
+  }
+  .site-info {
+    border: 1px solid trans;
+    margin: 1em;
+    height: auto;
+    display: flex;
+  }
+  th,td{
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 500;
+    font-size: 12px;
+    color: #777;
+    border-bottom: 0.5px solid rgba(0,0,0,0.4);
+  }
+  /*DASHBOARD CONTENT ENDING*/
+  .all-quick-info {
+    border: 1px solid;
+    width: 50%;
+    height: auto;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+    margin: 0.5em;
+  }
+  
+  .info-icon {
+    font-size: 70px;
+    padding: 10px 20px;
+  }
+  
+  .info-numbers {
+    font-size: 40px;
+  }
+  
+  .text-right {
+    text-align: right;
+    margin-top: -90px;
+    padding: 10px;
+  }
+
+  /*NEW CONTENT HOLDER*/ 
+  .notifications {
+    border: 1px solid #e0e0e0;
+    width: max-content;
+    width: 35%;
+    background: #ddd;
+    height: min-content;
+    border-radius: 2px;
+    box-shadow: 0px 1px 5px #d9d9d9;
+    margin-left: 1em;
+  }
+  
+  h2,
+  .action-holder {
+    display: inline-block;
+    font-size: 15px;
+    background: #ddd;
+    margin: 0;
+    padding: 5px;
+    color: #767676;
+  }
+  .notify-box {
+    background: #fff;
+    height: ;
+    padding: 5px;
+    border-radius: 2px;
+    overflow: scroll;
+    overflow-x: hidden;
+  }
+  /*NEWEST MEMBERS*/
+  .newest-members {
+    margin: 1em;
+  }
+  #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    width: 100%;
+  }
+  #customers td,
+  #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  #customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  #customers tr:hover {
+    background-color: #ddd;
+  }
+  #customers th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    background-color: #e0e0e0;
+    color: grey;
+    font-size: 13px;
+  }
+  
+  td {
+    font-size: 12px;
+    color: grey;
+  }
+  .view-all-members {
+    color: #767676;
+    padding: 5px;
+    border: 1px solid #f2f2f2;
+    margin: 0.5em;
+    border-radius: 2px;
+    text-align: center;
+    background: #f1f1f1;
+  }
+  
+  .view-all-members:hover {
+    padding: 5px;
+    border: 1px solid #f2f2f2;
+    margin: 0.5em;
+    border-radius: 2px;
+    text-align: center;
+    background: #f1f1f1;
+    box-shadow: 0px 1px 5px #d7d7d7;
+  }
+  
+  .view-all-btn1 {
+    background: #f2f2f2;
+    padding: 5px;
+  }
+ 
+  
+  .right {
+    float: right;
+  }
+  

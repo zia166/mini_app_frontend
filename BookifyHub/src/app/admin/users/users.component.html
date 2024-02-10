@@ -1,0 +1,85 @@
+<div class='center-content'>
+
+    <div class='all-border'>
+
+     
+
+      <section style="margin: 50px;">
+
+        <div class='site-info'>
+
+          <div class='all-quick-info'>
+
+            <div class='info-icon'><i class="fa">&#xf0c0;</i></div>
+
+            <div class='text-right'>
+              <div class='info-numbers'><span>{{count_users}}</span></div>
+              <div>Users</div>
+            </div>
+          </div>
+
+
+          <div style='background: #5cb85c; border-color: #5cb85c;' class='all-quick-info'>
+
+            <div class='info-icon'> <i class="fa fa-calendar-check"></i></div>
+
+            <div class='text-right'>
+              <div class='info-numbers'><span>{{count_bookings}}</span></div>
+              <div>Total Bookings</div>
+            </div>
+          </div>
+
+
+        </div>
+     
+
+        <div class='newest-members'>
+
+          <div style='width: -webkit-fill-available;' class='notifications'>
+            <div class='notify-header'>
+              <h2><i class="fa">&#xf0c0;</i>Members</h2>
+             
+            </div>
+        
+
+            <div class='notify-box'>
+              <div *ngIf="outputArray.length > 0">
+                <table id="customers">
+                  <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Event Name</th>
+                  </tr>
+                  <tr *ngFor="let user of outputArray; let i = index">
+                    <td>{{user['username']}}</td>
+                    <td>{{user['email']}}</td>
+                    <td>{{user['status']}}</td>
+                    <td>{{user['title']}}</td>
+                  </tr>
+                  <tr *ngIf="showRemainingUsers">
+                    <td colspan="4" class="remaining-users">
+                      <div *ngFor="let user of outputArray.slice(4)">
+                        {{user['username']}}
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+                <div class='view-all-members'>
+                  <span class='view-all-btn1' (click)="toggleRemainingUsers()">View All Members</span>
+                </div>
+              </div>
+              <div *ngIf="outputArray.length === 0">
+                No users found.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+      </section>
+
+    </div>
+
+  </div>

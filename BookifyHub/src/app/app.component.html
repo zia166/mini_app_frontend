@@ -1,0 +1,18 @@
+<div class="container-fluid h-100">
+  <div class="row h-100">
+    <div class="col p-0">
+
+      <div  *ngIf="!isInAdminRoute" class='btn' id="main" (click)="toggleMenu()">+</div>
+      <div id="menu"[ngClass]="{ active: isMenuActive }">
+        <h1>Bookify Hub</h1>
+        <h5 (click)="redirectToAbout()">About</h5>
+        <h5 (click)="redirectToBookings()">Booking</h5>
+        <h5 (click)="redirectToAdmin()">Admin Panel</h5>
+      </div>
+      <div id="foot"></div>
+      <div class="boat-two"><span id="flag"></span></div>
+
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

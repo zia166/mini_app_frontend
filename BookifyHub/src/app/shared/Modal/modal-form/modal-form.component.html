@@ -1,0 +1,76 @@
+
+<!-- Modal Header -->
+<div class="modal-header">
+    <h4 class="modal-title text-center text-bold">Bookings Form</h4>
+    <button type="button" class="close btn" aria-label="Close" (click)="closeModal()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+  
+  <!-- Modal Body -->
+<style>
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-control {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+    display: block;
+  }
+</style>
+
+<div class="modal-body">
+  <div class="form">
+    <div class="p-5 custom-modal-overlay">
+      <form class="signup-form" (ngSubmit)="updateSubmit()" #signupForm="ngForm">
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-9 col-xs-12">
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="username" id="name" class="form-control" required [(ngModel)]="updateObj.username">
+                <span class="error" *ngIf="signupForm.controls['username'].invalid && signupForm.controls['username'].touched">Full Name is required</span>
+              </div>
+              <div class="form-group">
+                <label for="loginemail">Email Address</label>
+                <input type="email" name="email" id="email" class="form-control" required [(ngModel)]="updateObj.email">
+                <span class="error" *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched">Email Address is required</span>
+              </div>
+              <div class="form-group">
+                <label for="title">Event Name</label>
+                <input type="text" name="title" id="title" class="form-control" required [(ngModel)]="updateObj.title">
+                <span class="error" *ngIf="signupForm.controls['title'].invalid && signupForm.controls['title'].touched">Event Name is required</span>
+              </div>
+              <div class="form-group">
+                <label for="ShowDate">Date</label>
+                <input type="date" name="booking_date" [(ngModel)]="updateObj.booking_date" class="form-control" required>
+                <span class="error" *ngIf="signupForm.controls['booking_date'].invalid && signupForm.controls['booking_date'].touched">Date is required</span>
+              </div>
+              <div class="form-group">
+                <label class="mt-2">Time</label>
+                <div class="row">
+                  <div class="col-6">
+                    <input type="time" name="start_time" [(ngModel)]="updateObj['start_time']" class="form-control" required>
+                    <span class="error" *ngIf="signupForm.controls['start_time'].invalid && signupForm.controls['start_time'].touched">Start Time is required</span>
+                  </div>
+                  <div class="col-6">
+                    <input type="time" name="end_time" [(ngModel)]="updateObj['end_time']" class="form-control" required>
+                    <span class="error" *ngIf="signupForm.controls['end_time'].invalid && signupForm.controls['end_time'].touched">End Time is required</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="text-lg-end p-4">
+              <button class="btn btn-secondary" type="submit">Submit</button>
+            </div>
+          </div>
+        </div>

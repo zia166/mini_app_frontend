@@ -1,0 +1,110 @@
+.sidebar {
+  background-color: rgb(27, 32, 43);
+  color: rgb(249, 240, 240);
+  padding: 20px;
+  height: 100vh;
+  width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+.sidebar-is-reduced {
+  width: 80px;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.shows-location {
+  border: 1px solid transparent;
+  width: auto;
+  height: 50px;
+  margin: 1em;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.9);
+  color: white;
+}
+
+.location {
+  font-size: 12px;
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  padding: 20px 30px;
+}
+
+.location-text {
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+nav ul li.active {
+  font-weight: bold;
+}
+
+main {
+  margin-left: 200px;
+  padding: 20px;
+}
+
+section {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+.hamburger-icon {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bar {
+  width: 30px;
+  height: 3px;
+  background-color: #fff;
+  transition: transform 0.3s;
+}
+
+.bar1 {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.bar2 {
+  opacity: 0;
+}
+
+.bar3 {
+  transform: translateY(-6px) rotate(-45deg);
+}

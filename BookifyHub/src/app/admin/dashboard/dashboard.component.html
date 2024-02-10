@@ -1,0 +1,54 @@
+<div [ngClass]="{'sidebar': true, 'sidebar-is-reduced': isSidebarReduced}">
+  <button class="hamburger-icon" (click)="toggleSidebar()">
+    <span [ngClass]="{'bar': true, 'bar1': !isSidebarReduced, 'bar2': isSidebarReduced}"></span>
+    <span [ngClass]="{'bar': true, 'bar2': !isSidebarReduced, 'bar3': isSidebarReduced}"></span>
+    <span [ngClass]="{'bar': true, 'bar3': !isSidebarReduced, 'bar1': isSidebarReduced}"></span>
+  </button>
+  <div class="sidebar-header">
+    <h1  class ="p-4" *ngIf="!isSidebarReduced">Bookify</h1>
+    <h1   class ="p-3"*ngIf="isSidebarReduced">B</h1>
+  </div>
+
+  <nav>
+    <ul *ngIf="isSidebarReduced">
+      <li [class.active]="activeNavItem === 'dashboard'" (click)="setActiveNavItem('dashboard')">
+        <i class="fas fa-align-left p-2"></i> 
+      </li>
+      <li [class.active]="activeNavItem === 'calendar'" (click)="setActiveNavItem('calendar')">
+        <i class="far fa-calendar-alt p-2"></i> 
+      </li>
+      <li [class.active]="activeNavItem === 'goBack'" >
+        <a href="#" style="text-decoration: none; color: white;" ><i class="fas fa-angle-left p-2"></i>  </a> 
+      </li>
+    </ul>
+    <ul *ngIf="!isSidebarReduced">
+      <li [class.active]="activeNavItem === 'dashboard'" (click)="setActiveNavItem('dashboard')">
+        <i class="fas fa-align-left p-2"></i> <span class="nav-text"> Dashboard</span> 
+      </li>
+      <br>
+      <li [class.active]="activeNavItem === 'calendar'" (click)="setActiveNavItem('calendar')">
+        <i class="far fa-calendar-alt p-2"></i> <span class="nav-text"> Calendar</span> 
+      </li>
+      <br>
+      <li [class.active]="activeNavItem === 'goBack'" >
+        <i class="fas fa-angle-left p-2"></i><a href="#" style="text-decoration: none; color: white;" ><span class="nav-text"> Go Back</span> </a> 
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<main>
+  <section>
+    <div class='shows-location'>
+      <div class='location-text'>
+        <span class='location'>{{ activeNavItem }}</span>
+      </div>
+    </div>
+  
+    <div class="content">
+        <app-calendar *ngIf="activeNavItem === 'calendar'"></app-calendar>
+        <app-users *ngIf="activeNavItem === 'dashboard'"></app-users>
+    </div>
+
+  </section>
+</main>
