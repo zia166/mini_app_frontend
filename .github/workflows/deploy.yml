@@ -1,0 +1,44 @@
+name: Deploy Angular App to S3
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: BookifyHub
+
+      - name: Build Angular app
+        run: npm run build -- --configuration production
+        working-directory: BookifyHub
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      - name: Deploy to S3
+        run: aws s3 sync ./dist/your-angular-app-name s3://bookifyadmin.s3-website-us-east-1.amazonaws.com/ --delete
+        working-directory: BookifyHub
+
+      # Optional: Invalidate CloudFront cache
+      # - name: Invalidate CloudFront
+      #   run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths '/*'
+
+      - name: Check deploy.yml file
+        run: git log --oneline -- .github/workflows/deploy.yml
